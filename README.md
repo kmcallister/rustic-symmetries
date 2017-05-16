@@ -180,7 +180,7 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 [arc]: https://doc.rust-lang.org/std/sync/struct.Arc.html
 [box]: https://doc.rust-lang.org/std/boxed/
 [mutex]: https://doc.rust-lang.org/std/sync/struct.Mutex.html
-[refcell]: https://doc.rust-lang.org/std/cell/index.html
+[refcell]: https://doc.rust-lang.org/std/cell/struct.RefCell.html
 [rwlock]: https://doc.rust-lang.org/std/sync/struct.RwLock.html
 [unsafecell]: https://doc.rust-lang.org/std/cell/struct.UnsafeCell.html
 [slice]: https://doc.rust-lang.org/std/primitive.slice.html
@@ -196,7 +196,7 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 [cstr]: https://doc.rust-lang.org/std/ffi/struct.CStr.html
 [cstring]: https://doc.rust-lang.org/std/ffi/struct.CString.html
 [c_char]: https://docs.rs/libc/0.2.22/libc/type.c_char.html
-[cell]: https://doc.rust-lang.org/std/cell/index.html
+[cell]: https://doc.rust-lang.org/std/cell/struct.Cell.html
 [atomic]: https://doc.rust-lang.org/std/sync/atomic/index.html
 [sync]: https://doc.rust-lang.org/std/marker/trait.Sync.html
 [i8]: https://doc.rust-lang.org/std/primitive.i8.html
