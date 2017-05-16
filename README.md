@@ -79,7 +79,7 @@ reject your code, through the magic of the [`Sync`][sync] trait.
 | Platform-dependent | | [`&OsStr`][osstr] | no | | [`Cow<OsStr>`][cow] | [`OsString`][osstring] |
 | Filesystem path | | [`&Path`][path] | no | | [`Cow<Path>`][cow] | [`PathBuf`][pathbuf] |
 | `NUL`-terminated, safe | | [`&CStr`][cstr] | no | | | [`CString`][cstring] |
-| `NUL`-terminated, raw | [`*const`<br>`c_char`][c_char] | [`*const`<br>`c_char`][c_char]<sup>γ</sup> | yes<sup>γδ</sup> | [`*mut`<br>`c_char`][c_char]<sup>γ</sup> | | [`*mut`<br>`c_char`][c_char]<sup>γε</sup> |
+| `NUL`-terminated, raw | [`*const`<br>`c_char`][c_char] | [`*const`<br>`c_char`][c_char]<sup>γ</sup> | yes<sup>δ</sup> | [`*mut`<br>`c_char`][c_char]<sup>γ</sup> | | [`*mut`<br>`c_char`][c_char]<sup>γε</sup> |
 
 <sup>α</sup> Nearly useless, because most mutations could change the length of a UTF-8
              codepoint. One exception is [ASCII-only case conversion][make_ascii_lowercase].
