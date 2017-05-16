@@ -78,7 +78,7 @@ reject your code, through the magic of the [`Sync`][sync] trait.
 | [UTF-8] | [`&str`][str] | yes | [`&mut`&nbsp;`str`][str]<sup>α</sup> | [`Cow<str>`][cow]<br> | [`String`][string] |
 | Platform-dependent | [`&OsStr`][osstr] | no | | [`Cow<OsStr>`][cow] | [`OsString`][osstring] |
 | Filesystem path | [`&Path`][path] | no | | [`Cow<Path>`][cow] | [`PathBuf`][pathbuf] |
-| `NUL`-terminated, safe | [`&CStr`][cstr] | no | | | [`CString`][cstring] |
+| `NUL`-terminated, safe | [`&CStr`][cstr] | no | | [`Cow<CStr>`][cow] | [`CString`][cstring] |
 | `NUL`-terminated, raw | [`*const`<br>`c_char`][c_char]<sup>γ</sup> | yes<sup>δ</sup> | [`*mut`<br>`c_char`][c_char]<sup>γ</sup> | | [`*mut`<br>`c_char`][c_char]<sup>γε</sup> |
 
 <sup>α</sup> Nearly useless, because most mutations could change the length of a UTF-8
