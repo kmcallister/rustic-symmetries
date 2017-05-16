@@ -142,7 +142,7 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 | [`[T; n]`][array] | `n` × size of `T` | `n` elements of type `T` | anything owned by `T` |
 | [`&T`][ref], [`&mut T`][mut-ref]<br>[`*const T`][rawptr], [`*mut T`][rawptr] | 1 word | pointer | |
 | [`Box<T>`][box] | 1 word | pointer | size of `T` |
-| [`Option<T>`][option] | 1 word + size of `T` + pad / align, unless ⇓ | tag + optionally `T` | anything owned by `T`, if `Some` |
+| [`Option<T>`][option] | 1 word + size of `T` + pad / align (but see below) | tag + optionally `T` | anything owned by `T`, if `Some` |
 | [`Option<&T>`][option]<br>[`Option<&mut T>`][option] | 1 word<sup>β</sup> | pointer or `NULL` | |
 | [`Option<Box<T>>`][option] | 1 word<sup>β</sup> | pointer or `NULL` | size of `T`, if `Some` |
 | [`[T]`][slice], [`str`][str] | dynamic size | elements or codepoints | |
