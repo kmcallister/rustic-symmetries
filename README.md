@@ -146,10 +146,10 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 | [`Option<&T>`][option]<br>[`Option<&mut T>`][option] | 1 word<sup>β</sup> | pointer or `NULL` | |
 | [`Option<Box<T>>`][option] | 1 word<sup>β</sup> | pointer or `NULL` | size of `T`, if `Some` |
 | [`[T]`][slice], [`str`][str] | dynamic size | elements or codepoints | |
-| [`&[T]`][slice] | 2 words | pointer, number of elements | |
-| [`&str`][str] | 2 words | pointer, number of bytes | |
-| [`Box<[T]>`][box] | 2 words | pointer, length | length × size of `T` |
-| [`Box<str>`][box] | 2 words | pointer, length | length (bytes) |
+| [`&[T]`][slice] | 2 words | pointer, length (in elements) | |
+| [`&str`][str] | 2 words | pointer, length (in bytes) | |
+| [`Box<[T]>`][box] | 2 words | pointer, length (in elements) | length × size of `T` |
+| [`Box<str>`][box] | 2 words | pointer, length (in bytes) | length (bytes) |
 | [`Vec<T>`][vec] | 3 words | pointer, length, capacity | capacity × size of `T` |
 | [`String`][string] | 3 words | pointer, length, capacity | capacity (bytes) |
 | [`Trait`][trait-object] | dynamic size | fields of concrete type | anything owned by fields |
