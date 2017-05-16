@@ -72,20 +72,20 @@ reject your code, through the magic of the [`Sync`][sync] trait.
 
 ## Strings
 
-| Format | Static memory<sup>β</sup> | Borrow | Borrow substr? | Mutate | Copy on write | Owned, in heap |
-| --- | --- | --- | --- | --- | --- | --- |
-| Any bytes | [`&'static`&nbsp;`[u8]`][slice] | [`&[u8]`][slice] | yes | [`&mut`&nbsp;`[u8]`][slice] | [`Cow<[u8]>`][cow]<br> | [`Vec<u8>`][vec] |
-| [UTF-8] | [`&'static`&nbsp;`str`][str] | [`&str`][str] | yes | [`&mut`&nbsp;`str`][str]<sup>α</sup> | [`Cow<str>`][cow]<br> | [`String`][string] |
-| Platform-dependent | | [`&OsStr`][osstr] | no | | [`Cow<OsStr>`][cow] | [`OsString`][osstring] |
-| Filesystem path | | [`&Path`][path] | no | | [`Cow<Path>`][cow] | [`PathBuf`][pathbuf] |
-| `NUL`-terminated, safe | | [`&CStr`][cstr] | no | | | [`CString`][cstring] |
-| `NUL`-terminated, raw | [`*const`<br>`c_char`][c_char] | [`*const`<br>`c_char`][c_char]<sup>γ</sup> | yes<sup>δ</sup> | [`*mut`<br>`c_char`][c_char]<sup>γ</sup> | | [`*mut`<br>`c_char`][c_char]<sup>γε</sup> |
+| Format | Borrow<sup>β</sup> | Borrow substr? | Mutate | Copy on write | Owned, in heap |
+| --- | --- | --- | --- | --- | --- |
+| Any bytes | [`&[u8]`][slice] | yes | [`&mut`&nbsp;`[u8]`][slice] | [`Cow<[u8]>`][cow]<br> | [`Vec<u8>`][vec] |
+| [UTF-8] | [`&str`][str] | yes | [`&mut`&nbsp;`str`][str]<sup>α</sup> | [`Cow<str>`][cow]<br> | [`String`][string] |
+| Platform-dependent | [`&OsStr`][osstr] | no | | [`Cow<OsStr>`][cow] | [`OsString`][osstring] |
+| Filesystem path | [`&Path`][path] | no | | [`Cow<Path>`][cow] | [`PathBuf`][pathbuf] |
+| `NUL`-terminated, safe | [`&CStr`][cstr] | no | | | [`CString`][cstring] |
+| `NUL`-terminated, raw | [`*const`<br>`c_char`][c_char]<sup>γ</sup> | yes<sup>δ</sup> | [`*mut`<br>`c_char`][c_char]<sup>γ</sup> | | [`*mut`<br>`c_char`][c_char]<sup>γε</sup> |
 
 <sup>α</sup> Nearly useless, because most mutations could change the length of a UTF-8
              codepoint. One exception is [ASCII-only case conversion][make_ascii_lowercase].
 
-<sup>β</sup> The blanks in this column indicate types where the only (?) way to get a
-             `'static` borrow is `unsafe` hax.
+<sup>β</sup> In most cases, you can borrow static memory (e.g. a string literal) with a type
+             like `&'static str`.
 
 <sup>γ</sup> With raw pointers, you are on your own regarding ownership / borrowing
              semantics. Any good C library will document its expectations.
