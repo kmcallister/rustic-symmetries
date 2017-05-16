@@ -236,6 +236,8 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 
 ## See also
 
+[rust-learning cheat sheets](https://github.com/ctjhoa/rust-learning#cheat-sheets)
+
 [Rust Cheatsheet](http://phaiax.github.io/rust-cheatsheet/)
 
 [Rust Iterator Cheat Sheet](https://danielkeep.github.io/itercheat_baked.html)
