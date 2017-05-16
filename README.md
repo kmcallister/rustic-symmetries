@@ -135,6 +135,7 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 
 | Type | Value size | Contents | Heap size |
 | --- | --- | --- | --- |
+| [`bool`][bool] | 1 byte | 0 or 1 | |
 | [`()`][tuple] | empty! | | |
 | [`(A, B, C)`][tuple]<br>[`struct`][struct] | sum of `A`, `B`, `C` + pad / align | values of type `A`, `B`, `C` | anything owned by `A`, `B`, or `C` |
 | [`enum`][enum] | size of tag<br>+ max of variants<br>+ pad / align | tag + one variant | anything owned by variant |
@@ -229,6 +230,7 @@ We assume `T`, `A`, `B`, `C` are [`Sized`][sized].
 [sized]: https://doc.rust-lang.org/std/marker/trait.Sized.html
 [rawptr]: https://doc.rust-lang.org/std/primitive.pointer.html
 [array]: https://doc.rust-lang.org/std/primitive.array.html
+[bool]: https://doc.rust-lang.org/std/primitive.bool.html
 
 
 ## See also
