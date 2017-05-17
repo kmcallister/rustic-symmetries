@@ -1,5 +1,7 @@
 # Rustic Symmetries
 
+[Version en español](es_ES.md)
+
 In honor of the [second birthday of stable Rust][birthday], here is a small
 contribution to Rust documentation.
 
